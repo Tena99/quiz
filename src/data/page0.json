@@ -1,0 +1,44 @@
+{
+  "q1": {
+    "question": "Wie selektiert man ein Element mit id=demo?",
+    "a1": "#demo",
+    "a2": ".demo",
+    "a3": "Demo",
+    "a4": "*demo"
+  },
+  "q2": {
+    "question": "Wofür steht CSS?",
+    "a1": "Computer Style Sheets",
+    "a2": "Cascading Style Sheets",
+    "a3": "Colored Style Sheets",
+    "a4": "Creative Style Sheets"
+  },
+  "q3": {
+    "question": "Welche CSS Syntax ist korrekt?",
+    "a1": "{body: color=black;}",
+    "a2": "{body; color: black;}",
+    "a3": "body {color: black;}",
+    "a4": "body: color=black"
+  },
+  "q4": {
+    "question": "Was ist der Defaultwert für position?",
+    "a1": "relative",
+    "a2": "fixed",
+    "a3": "absolute",
+    "a4": "static"
+  },
+  "q5": {
+    "question": "Wie heißt Ralf mit zweitem Vornamen?",
+    "a1": "Thomas",
+    "a2": "Ulrich",
+    "a3": "Sabine",
+    "a4": "Jürgen"
+  },
+  "werbung": {
+    "question": "Wanna get some JS skills? Get you at the TaktSoft Campus!",
+    "a1": "",
+    "a2": "",
+    "a3": "",
+    "a4": ""
+  }
+}
