@@ -15,8 +15,8 @@ function App() {
   return (
     <>
       <div className="app">
-        <h1>Hello world</h1>
-        {/* <WelcomePage /> */}
+        <h1>Quiz app</h1>
+        <WelcomePage />
         <Questions />
         {/* <Ads />
         <Results /> */}
