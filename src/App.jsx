@@ -18,8 +18,8 @@ function App() {
         <h1>Quiz app</h1>
         <WelcomePage />
         <Questions />
-        <Ads />
-        <Results />
+        {/* <Ads />
+        <Results /> */}
       </div>
     </>
   );
