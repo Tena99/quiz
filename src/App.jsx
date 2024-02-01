@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 import "./App.css";
 import Questions from "./components/Questions";
 import WelcomePage from "./components/WelcomePage";
@@ -14,7 +14,7 @@ function App() {
 
   return (
     <>
-      <div className="App">
+      <div className="app">
         <h1>Hello world</h1>
         {/* <WelcomePage /> */}
         <Questions />
