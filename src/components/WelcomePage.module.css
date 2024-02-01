@@ -1,0 +1,13 @@
+.container {
+  background-color: #40a2d8;
+}
+
+.greetings {
+  color: #000;
+  font-weight: 600;
+  letter-spacing: 3px;
+  font-size: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: Arial, Helvetica, sans-serif;
+}
