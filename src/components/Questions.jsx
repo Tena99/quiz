@@ -7,12 +7,36 @@ export default function Questions() {
   const currentQuestion = questions[questionIndex];
 
   function nextQuestion() {
-    if (questions.length - 1 > questionIndex)
-      setQuestionIndex(questionIndex + 1);
+    let container = document.querySelector(`.${styles["questions_container"]}`);
+    let li = [...container.querySelectorAll("li")];
+
+    li.map((item) => {
+      item.classList.remove(styles["wrong_answer"]);
+      item.classList.remove(styles["right_answer"]);
+    });
+
+    if (questions.length - 1 > questionIndex);
+
+    setQuestionIndex(questionIndex + 1);
   }
 
   function prevQuestion() {
     if (questionIndex > 0) setQuestionIndex(questionIndex - 1);
+  }
+
+  function chooseAnwer(answerNum, element) {
+    console.log(answerNum);
+    console.log(element);
+
+    element.a;
+
+    if (questions[questionIndex].rightAnswer == answerNum) {
+      console.log("Right answer");
+      element.classList.add(styles["right_answer"]);
+    } else {
+      console.log("Wrong answer");
+      element.classList.add(styles["wrong_answer"]);
+    }
   }
 
   return (
@@ -25,19 +49,19 @@ export default function Questions() {
 
       <div className={styles["answers_container"]}>
         <ul>
-          <li>
+          <li onClick={(event) => chooseAnwer("a1", event.target)}>
             <strong>A:</strong> {currentQuestion.a1}
           </li>
-          <li>
+          <li onClick={(event) => chooseAnwer("a2", event.target)}>
             <strong>B:</strong> {currentQuestion.a2}
           </li>
         </ul>
 
         <ul>
-          <li>
+          <li onClick={(event) => chooseAnwer("a3", event.target)}>
             <strong>C:</strong> {currentQuestion.a3}
           </li>
-          <li>
+          <li onClick={(event) => chooseAnwer("a4", event.target)}>
             <strong>D:</strong> {currentQuestion.a4}
           </li>
         </ul>

@@ -16,10 +16,10 @@ function App() {
     <>
       <div className="app">
         <h1>Quiz app</h1>
-        <WelcomePage />
+        {/* <WelcomePage /> */}
         <Questions />
-        <Ads />
-        <Results />
+        {/* <Ads />
+        <Results /> */}
       </div>
     </>
   );

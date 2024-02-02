@@ -1,6 +1,5 @@
 .questions_container {
   padding: 20px;
-  margin: 10px;
   border: 1px solid black;
   border-radius: 15px;
   background-color: #40a2d8;
@@ -9,20 +8,22 @@
     text-align: center;
     background-color: #f0edcf;
     border-radius: 15px;
-    padding: 5px;
+    padding: 15px;
   }
 
   .progressBar {
-    background-color: #f0edcf;
+    background-color: var(--primary-color);
     border-radius: 15px;
     padding: 5px;
-
-    margin: auto;
+    margin-bottom: 10px;
 
     h4 {
       margin: 0;
+      padding: 5px;
       text-align: center;
       font-weight: 400;
+      color: white;
+      font-size: 14px;
     }
   }
 
@@ -33,6 +34,14 @@
       list-style: none;
       width: 50%;
       padding: 10px;
+
+      .right_answer {
+        background-color: #24b624;
+      }
+
+      .wrong_answer {
+        background-color: red;
+      }
 
       li {
         background-color: #f0edcf;
@@ -58,16 +67,18 @@
 
     button {
       padding: 10px 15px;
-      background-color: #f0edcf;
+      background-color: var(--primary-color);
       border-radius: 15px;
-      border: 2px solid #f0edcf;
+      border: 2px solid var(--primary-color);
+      color: white;
+      width: 45%;
 
       &:hover {
         border: 2px solid black;
       }
 
       &:active {
-        background-color: #b7b394;
+        background-color: #0d4477;
         border: 2px solid black;
       }
     }
