@@ -2,17 +2,35 @@ import styles from "./Questions.module.css";
 import { useState } from "react";
 import questions from "../data/questions.json";
 
-export default function Questions() {
+export default function Questions({ setNumCorrectAnswers }) {
   const [questionIndex, setQuestionIndex] = useState(0);
   const currentQuestion = questions[questionIndex];
 
   function nextQuestion() {
-    if (questions.length - 1 > questionIndex)
-      setQuestionIndex(questionIndex + 1);
+    let container = document.querySelector(`.${styles["questions_container"]}`);
+    let li = [...container.querySelectorAll("li")];
+
+    li.map((item) => {
+      item.classList.remove(styles["wrong_answer"]);
+      item.classList.remove(styles["correct_answer"]);
+    });
+
+    if (questions.length - 1 > questionIndex);
+
+    setQuestionIndex(questionIndex + 1);
   }
 
   function prevQuestion() {
     if (questionIndex > 0) setQuestionIndex(questionIndex - 1);
+  }
+
+  function chooseAnwer(answerNum, element) {
+    if (questions[questionIndex].correctAnswer == answerNum) {
+      element.classList.add(styles["correct_answer"]);
+      setNumCorrectAnswers((prevNum) => prevNum + 1);
+    } else {
+      element.classList.add(styles["wrong_answer"]);
+    }
   }
 
   return (
@@ -25,19 +43,19 @@ export default function Questions() {
 
       <div className={styles["answers_container"]}>
         <ul>
-          <li>
+          <li onClick={(event) => chooseAnwer("a1", event.target)}>
             <strong>A:</strong> {currentQuestion.a1}
           </li>
-          <li>
+          <li onClick={(event) => chooseAnwer("a2", event.target)}>
             <strong>B:</strong> {currentQuestion.a2}
           </li>
         </ul>
 
         <ul>
-          <li>
+          <li onClick={(event) => chooseAnwer("a3", event.target)}>
             <strong>C:</strong> {currentQuestion.a3}
           </li>
-          <li>
+          <li onClick={(event) => chooseAnwer("a4", event.target)}>
             <strong>D:</strong> {currentQuestion.a4}
           </li>
         </ul>

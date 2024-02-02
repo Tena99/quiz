@@ -14,7 +14,7 @@
   h3 {
     text-align: center;
     border-radius: 15px;
-    padding: 5px;
+    padding: 15px;
   }
 
   .progressBar {
@@ -27,8 +27,11 @@
 
     h4 {
       margin: 0;
+      padding: 5px;
       text-align: center;
       font-weight: 400;
+      color: white;
+      font-size: 14px;
     }
   }
 
@@ -39,6 +42,14 @@
       list-style: none;
       width: 50%;
       padding: 10px;
+
+      .correct_answer {
+        background-color: #24b624;
+      }
+
+      .wrong_answer {
+        background-color: red;
+      }
 
       li {
         background-color: var(--primary-color);

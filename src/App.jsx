@@ -6,19 +6,23 @@ import Results from "./components/Results";
 import Ads from "./components/Ads";
 
 function App() {
+  const [numCorrectAnswers, setNumCorrectAnswers] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
+
   const goToPreviousPage = () => {
     setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
   };
+
   const goToNextPage = () => {
     setCurrentPage((prevPage) => prevPage + 1);
   };
+
   const showPage = () => {
     switch (currentPage) {
       case 1:
         return <WelcomePage />;
       case 2:
-        return <Questions />;
+        return <Questions setNumCorrectAnswers={setNumCorrectAnswers} />;
       case 3:
         return <Ads />;
       case 4:
@@ -34,6 +38,7 @@ function App() {
     <>
       <div className="app">
         <h1>Quiz app</h1>
+
         <div className="switcher">
           <button
             className="prevbutton"
