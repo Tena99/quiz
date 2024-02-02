@@ -17,6 +17,7 @@
   padding: 40px;
   box-shadow: 0 10px 20px #000;
   transition: all 0.2s;
+  width: 100%;
 }
 
 .greetings {
