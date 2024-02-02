@@ -51,4 +51,25 @@
       }
     }
   }
+
+  .questions_buttons {
+    display: flex;
+    justify-content: space-between;
+
+    button {
+      padding: 10px 15px;
+      background-color: #f0edcf;
+      border-radius: 15px;
+      border: 2px solid #f0edcf;
+
+      &:hover {
+        border: 2px solid black;
+      }
+
+      &:active {
+        background-color: #b7b394;
+        border: 2px solid black;
+      }
+    }
+  }
 }
