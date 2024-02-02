@@ -7,5 +7,9 @@
 body {
   margin: 0;
   padding: 0;
+<<<<<<< HEAD
+=======
+  display: flex;
+>>>>>>> main
   box-sizing: border-box;
 }
