@@ -9,7 +9,7 @@
   user-select: none;
 }
 body {
-  background-size: 40%;
+  background-attachment: fixed;
   background-image: linear-gradient(#484848e5, #484848e5), url(assets/back.jpeg);
 }
 h1 {
