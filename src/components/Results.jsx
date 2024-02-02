@@ -20,7 +20,7 @@ export default function Results() {
   return (
     <div className={styles.results}>
       {result}
-      {/* <p>Hier wird es die richtige Antworten geben!</p> */}
+      <p></p>
     </div>
   );
 }

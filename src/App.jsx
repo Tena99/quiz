@@ -18,7 +18,7 @@ function App() {
         <h1>Quiz app</h1>
         {/* <WelcomePage /> */}
         {/* <Questions /> */}
-        {/* <Ads /> */}
+        <Ads />
         <Results />
       </div>
     </>

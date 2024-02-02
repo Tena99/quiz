@@ -16,7 +16,7 @@ export default function Ads() {
       </p>
       <img className={styles.promoimg} src={PromoImg} alt="PromoImg" />
 
-      <button className={styles.adbutton}>Visit website</button>
+      <button className={styles.adbutton}>Mehr erfahren!</button>
     </div>
   );
 }
