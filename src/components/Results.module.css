@@ -4,7 +4,8 @@
   box-sizing: border-box;
 }
 .results {
-  width: 630px;
+  width: 100%;
+  height: auto;
   display: grid;
   gap: 10px;
   justify-content: center;

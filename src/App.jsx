@@ -6,40 +6,49 @@ import Results from "./components/Results";
 import Ads from "./components/Ads";
 
 function App() {
-  const [page, setPage] = useState("welcome");
-
-  const handleSwitchPage = (newPage) => {
-    setPage(newPage);
+  const [currentPage, setCurrentPage] = useState(1);
+  const goToPreviousPage = () => {
+    setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
   };
-
+  const goToNextPage = () => {
+    setCurrentPage((prevPage) => prevPage + 1);
+  };
   const showPage = () => {
-    switch (page) {
-      case "welcome":
+    switch (currentPage) {
+      case 1:
         return <WelcomePage />;
-      case "questions":
+      case 2:
         return <Questions />;
-      case "ads":
+      case 3:
         return <Ads />;
-      case "results":
+      case 4:
         return <Results />;
       default:
         return null;
     }
   };
 
+  const correctAnswers = ["q1", "q2", "q3", "q4", "q5"];
+
   return (
     <>
       <div className="app">
         <h1>Quiz app</h1>
         <div className="switcher">
-          <button onClick={() => handleSwitchPage("welcome")}>
-            Welcome Page
+          <button
+            className="prevbutton"
+            onClick={goToPreviousPage}
+            disabled={currentPage === 1}
+          >
+            <i class="fa-solid fa-angle-left"></i>
           </button>
-          <button onClick={() => handleSwitchPage("questions")}>
-            Questions
+          <button
+            className="nextbutton"
+            onClick={goToNextPage}
+            disabled={currentPage === 4}
+          >
+            <i class="fa-solid fa-chevron-right"></i>
           </button>
-          <button onClick={() => handleSwitchPage("ads")}>Ads</button>
-          <button onClick={() => handleSwitchPage("results")}>Results</button>
         </div>
         {showPage()}
       </div>

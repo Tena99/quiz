@@ -4,6 +4,8 @@
 }
 
 .container {
+  display: flex;
+  flex-direction: column;
   background-color: #f0edcf;
   gap: 10px;
   justify-content: center;
@@ -57,5 +59,6 @@
 }
 
 .welcomeImage {
-  height: 150px;
+  width: 100%;
+  height: auto;
 }

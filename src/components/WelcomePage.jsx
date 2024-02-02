@@ -6,7 +6,11 @@ export default function WelcomePage() {
     <div className={styles.container}>
       <span className={styles.greetings}>Welcome!</span>
 
-      <img src={welcomeImage} alt="welcome image" />
+      <img
+        src={welcomeImage}
+        className={styles.welcomeImage}
+        alt="welcome image"
+      />
 
       <button className={styles.welcomebutton}>START</button>
     </div>
