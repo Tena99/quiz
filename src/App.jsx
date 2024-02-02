@@ -20,41 +20,38 @@ function App() {
   const showPage = () => {
     switch (currentPage) {
       case 1:
-        return <WelcomePage />;
+        return <WelcomePage goToNextPage={goToNextPage} />;
       case 2:
-        return <Questions setNumCorrectAnswers={setNumCorrectAnswers} />;
+        return (
+          <Questions
+            setNumCorrectAnswers={setNumCorrectAnswers}
+            goToPreviousPage={goToPreviousPage}
+            goToNextPage={goToNextPage}
+          />
+        );
       case 3:
-        return <Ads />;
+        return (
+          <Ads
+            goToPreviousPage={goToPreviousPage}
+            goToNextPage={goToNextPage}
+          />
+        );
       case 4:
-        return <Results />;
+        return (
+          <Results
+            numCorrectAnswers={numCorrectAnswers}
+            goToPreviousPage={goToPreviousPage}
+          />
+        );
       default:
         return null;
     }
   };
 
-  const correctAnswers = ["q1", "q2", "q3", "q4", "q5"];
-
   return (
     <>
       <div className="app">
         <h1>Quiz app</h1>
-
-        <div className="switcher">
-          <button
-            className="prevbutton"
-            onClick={goToPreviousPage}
-            disabled={currentPage === 1}
-          >
-            <i class="fa-solid fa-angle-left"></i>
-          </button>
-          <button
-            className="nextbutton"
-            onClick={goToNextPage}
-            disabled={currentPage === 4}
-          >
-            <i class="fa-solid fa-chevron-right"></i>
-          </button>
-        </div>
         {showPage()}
       </div>
     </>

@@ -2,7 +2,11 @@ import styles from "./Questions.module.css";
 import { useState } from "react";
 import questions from "../data/questions.json";
 
-export default function Questions({ setNumCorrectAnswers }) {
+export default function Questions({
+  goToPreviousPage,
+  goToNextPage,
+  setNumCorrectAnswers,
+}) {
   const [questionIndex, setQuestionIndex] = useState(0);
   const currentQuestion = questions[questionIndex];
 
@@ -63,16 +67,18 @@ export default function Questions({ setNumCorrectAnswers }) {
 
       <div className={styles["questions_buttons"]}>
         <button
-          onClick={prevQuestion}
-          disabled={currentQuestion === questions[0]}
+          onClick={
+            currentQuestion === questions[0] ? goToPreviousPage : prevQuestion
+          }
         >
-          Previous question
+          <i className="fa-solid fa-angle-left"></i>
         </button>
         <button
-          onClick={nextQuestion}
-          disabled={currentQuestion === questions[4]}
+          onClick={
+            currentQuestion === questions[4] ? goToNextPage : nextQuestion
+          }
         >
-          Next question
+          <i className="fa-solid fa-chevron-right"></i>
         </button>
       </div>
     </article>

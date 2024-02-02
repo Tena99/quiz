@@ -1,26 +1,16 @@
 import styles from "./Results.module.css";
 
-export default function Results() {
-  const result = () => {
-    const [answers, setAnswers] = useState(["A", "B", "C", "D"]); // beispiel falsch
-    const correctAnswers = ["B", "B", "C", "D"]; // beispiel richtig
-
-    const correctCount = answers
-      .map((answer, id) => {
-        return answer === correctAnswers[id] ? 1 : 0;
-      })
-      .reduce((b, a) => b + a, 0);
-
-    return (
-      <div>
-        <h2>Zahl der richtigen Antworten: {correctCount}</h2>
-      </div>
-    );
-  };
+export default function Results({ goToPreviousPage, numCorrectAnswers }) {
   return (
     <div className={styles.results}>
-      {result}
-      <p></p>
+      <div className="switcher">
+        <button className="prevbutton" onClick={goToPreviousPage}>
+          <i className="fa-solid fa-angle-left"></i>
+        </button>
+      </div>
+
+      <p className={styles.text}>Number of correct answers: </p>
+      <p className={styles.count}>{numCorrectAnswers}</p>
     </div>
   );
 }

@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 .container {
@@ -19,18 +20,6 @@
   transition: all 0.2s;
   width: 100%;
 }
-/* 
-.greetings {
-  display: block;
-  margin: 30px auto 60px auto;
-  color: #0b60b0;
-  font-weight: 600;
-  letter-spacing: 3px;
-  font-size: 40px;
-  text-align: center;
-  text-transform: uppercase;
-  font-family: Arial, Helvetica, sans-serif;
-} */
 
 .welcomeImage {
   border-radius: 20px;
@@ -57,8 +46,8 @@
   transition: all 0.2s;
 }
 .welcomebutton:hover {
-  background-color: var(--secondary-color);
-  scale: 1.01;
+  background-color: var(--third-color);
+  scale: 1.1;
 }
 .welcomebutton:active {
   background-color: var(--primary-color);
