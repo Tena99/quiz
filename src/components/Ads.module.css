@@ -11,13 +11,16 @@
   border: 1px solid #3689b6;
   border-radius: 20px;
   padding: 40px;
-  background-color: #40a2d8;
+  background-color: #f0edcf;
   box-shadow: 0 10px 20px #000;
   transition: all 0.2s;
+  margin: 20px;
 }
 .title {
+  font-size: 2em;
+  font-weight: 700;
   grid-area: 1 / 1 / 2 / 4;
-  color: #f0edcf;
+  color: #0b60b0;
   text-shadow: #0b60b0 1px 1px 2px;
   text-transform: uppercase;
   text-align: center;
@@ -25,7 +28,7 @@
 .adbutton {
   width: 200px;
   grid-area: 4 / 2 / 5 / 3;
-  background-color: #0b60b0;
+  background-color: #40a2d8;
   color: #f0edcf;
   border: none;
   border-radius: 7px;
@@ -33,6 +36,7 @@
   padding: 15px 15px 15px 15px;
   transition: all 0.2s;
   box-shadow: 0 2px 5px #000;
+  text-shadow: 1px 1px 2px #000;
 }
 .adbutton:hover {
   background-color: #0b60b0;
@@ -48,9 +52,7 @@
   max-width: 500px;
   text-align: justify;
   font-size: larger;
-  color: #f0edcf;
-  text-shadow: #000 1px 1px 2px;
-  background-color: #0b60b0;
+  color: #0b60b0;
   padding: 15px;
   border-radius: 20px;
 }
@@ -58,10 +60,22 @@
   grid-area: 2 / 1 / 3 / 4;
   width: 500px;
   border-radius: 50px;
-  background-color: #f0edcf;
-  box-shadow: inset 0 0px 50px #000;
+  background-color: #0b60b0;
+  box-shadow: inset 0 0px 70px #000;
+  animation-duration: 3s;
+  animation-name: changeBackgroundColor;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
   transition: all 0.2s;
 }
 .promoimg:hover {
-  box-shadow: inset 0 0px 15px #000;
+  background-color: #40a2d8;
+}
+@keyframes changeBackgroundColor {
+  from {
+    background-color: #0b60b0;
+  }
+  to {
+    background-color: #f0edcf;
+  }
 }

@@ -3,10 +3,33 @@
   padding: 0;
   width: 100vw;
 }
+
+* {
+  box-sizing: border-box;
+  user-select: none;
+}
+body {
+  background-attachment: fixed;
+  background-image: linear-gradient(#484848e5, #484848e5), url(assets/back.jpeg);
+}
+h1 {
+  text-transform: uppercase;
+  color: #f0edcf;
+  text-shadow: #0b60b0 1px 1px 2px;
+  font-size: 3em;
+}
 .app {
-  display: flex;
-  flex-direction: column;
+  margin: 40px;
+  display: grid;
+  gap: 10px;
   justify-content: center;
   justify-items: center;
   align-items: center;
+  align-content: center;
+  border: 1px solid #3689b6;
+  border-radius: 20px;
+  padding: 40px;
+  background-color: #40a2d8;
+  box-shadow: 0 10px 20px #000;
+  transition: all 0.2s;
 }
