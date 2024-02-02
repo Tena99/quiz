@@ -16,12 +16,7 @@ export default function Ads() {
       </p>
       <img className={styles.promoimg} src={PromoImg} alt="PromoImg" />
 
-      <button
-        className={styles.adbutton}
-        href="https://https://talents.taktsoft.com/"
-      >
-        Visit website
-      </button>
+      <button className={styles.adbutton}>Visit website</button>
     </div>
   );
 }
