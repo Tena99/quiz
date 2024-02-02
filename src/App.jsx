@@ -15,11 +15,16 @@ function App() {
   return (
     <>
       <div className="app">
-        <h1>Quiz</h1>
-        {/* <WelcomePage /> */}
+        <h1>Quiz app</h1>
+<<<<<<< HEAD
+        <WelcomePage />
         <Questions />
-        {/* <Ads />
-        <Results /> */}
+=======
+        {/* <WelcomePage /> */}
+        {/* <Questions /> */}
+>>>>>>> main
+        <Ads />
+        <Results />
       </div>
     </>
   );

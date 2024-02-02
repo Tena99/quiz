@@ -1,0 +1,32 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.results {
+  width: 630px;
+  display: grid;
+  gap: 10px;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  border: 1px solid var(--light-border-color);
+  border-radius: 20px;
+  padding: 40px;
+  background-color: var(--third-color);
+  transition: all 0.2s;
+  margin: 20px;
+  border-radius: 20px;
+  border: 1px solid var(--light-border-color);
+  box-shadow: 0 10px 20px #000;
+  animation: animate 3s linear infinite;
+}
+@keyframes animate {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
+}

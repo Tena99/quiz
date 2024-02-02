@@ -4,9 +4,9 @@ import PromoImg from "../assets/promoImg.png";
 export default function Ads() {
   return (
     <div className={styles.ad}>
-      <h1 className={styles.title}>
+      <p className={styles.title}>
         Buche das taktsoft bootcamp! <br /> Es ist toll!
-      </h1>
+      </p>
       <p className={styles.description}>
         Unsere Coding Bootcamps In unseren Bootcamps bilden wir
         Quereinsteiger:innen in nur vier Monaten zu Developern aus. Das könnte
@@ -16,7 +16,7 @@ export default function Ads() {
       </p>
       <img className={styles.promoimg} src={PromoImg} alt="PromoImg" />
 
-      <button className={styles.adbutton}>Visit website</button>
+      <button className={styles.adbutton}>Mehr erfahren!</button>
     </div>
   );
 }

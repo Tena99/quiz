@@ -8,49 +8,55 @@
   justify-items: center;
   align-items: center;
   align-content: center;
-  border: 1px solid #3689b6;
+  border: 1px solid var(--dark-border-color);
   border-radius: 20px;
   padding: 40px;
-  background-color: #40a2d8;
+  background-color: var(--primary-color);
   box-shadow: 0 10px 20px #000;
   transition: all 0.2s;
+  margin: 20px;
 }
 .title {
+  font-size: 2em;
+  font-weight: 700;
   grid-area: 1 / 1 / 2 / 4;
-  color: #f0edcf;
-  text-shadow: #0b60b0 1px 1px 2px;
+  color: var(--third-color);
+  text-shadow: var(--secondary-color) 1px 1px 2px;
   text-transform: uppercase;
   text-align: center;
 }
 .adbutton {
   width: 200px;
   grid-area: 4 / 2 / 5 / 3;
-  background-color: #0b60b0;
-  color: #f0edcf;
-  border: none;
+  background-color: var(--secondary-color);
+  color: var(--third-color);
+  border: 1px solid var(--dark-border-color);
   border-radius: 7px;
   text-transform: uppercase;
   padding: 15px 15px 15px 15px;
   transition: all 0.2s;
   box-shadow: 0 2px 5px #000;
+  text-shadow: 1px 1px 1px var(--primary-color);
+  font-size: large;
+  font-weight: 600;
 }
 .adbutton:hover {
-  background-color: #0b60b0;
+  background-color: var(--third-color);
+  color: var(--primary-color);
+  text-shadow: var(--secondary-color) 1px 1px 01px;
   box-shadow: 0 5px 10px #000;
   scale: 1.01;
 }
 .adbutton:active {
   box-shadow: inset 0 5px 10px #000;
-  scale: 0.98;
+  scale: 0.97;
 }
 .description {
   grid-area: 3 / 1 / 4 / 4;
   max-width: 500px;
   text-align: justify;
   font-size: larger;
-  color: #f0edcf;
-  text-shadow: #000 1px 1px 2px;
-  background-color: #0b60b0;
+  color: var(--third-color);
   padding: 15px;
   border-radius: 20px;
 }
@@ -58,10 +64,22 @@
   grid-area: 2 / 1 / 3 / 4;
   width: 500px;
   border-radius: 50px;
-  background-color: #f0edcf;
-  box-shadow: inset 0 0px 50px #000;
+  background-color: var(--primary-color);
+  box-shadow: inset 0 0px 70px #000;
+  animation-duration: 3s;
+  animation-name: changeBackgroundColor;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
   transition: all 0.2s;
 }
 .promoimg:hover {
-  box-shadow: inset 0 0px 15px #000;
+  background-color: var(--secondary-color);
+}
+@keyframes changeBackgroundColor {
+  from {
+    background-color: var(--primary-color);
+  }
+  to {
+    background-color: var(--third-color);
+  }
 }
