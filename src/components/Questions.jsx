@@ -1,65 +1,51 @@
-import questions from "../data/page0.json";
 import styles from "./Questions.module.css";
+import { useState } from "react";
+import questions from "../data/questions.json";
 
 export default function Questions() {
-  // let question;
-  // switch (page) {
-  //   case "1":
-  //     question = questions.q1;
-  //     break;
-  //   case "2":
-  //     question = questions.q2;
-  //     break;
-  //   case "3":
-  //     question = questions.q3;
-  //     break;
-  //   case "4":
-  //     question = questions.werbung;
-  //     break;
-  //   case "5":
-  //     question = questions.q4;
-  //     break;
-  //   case "6":
-  //     question = questions.q5;
-  //     break;
-  //   default:
-  //     question = page;
-  // }
+  const [questionIndex, setQuestionIndex] = useState(0);
+  const currentQuestion = questions[questionIndex];
 
-  // const pages = [
-  //   { id: "1", page: questions.q1 },
-  //   { id: "2", page: questions.q2 },
-  //   { id: "3", page: questions.q3 },
-  //   { id: "4", page: questions.q4 },
-  //   { id: "5", page: questions.q5 },
-  // ];
+  function nextQuestion() {
+    if (questions.length - 1 > questionIndex)
+      setQuestionIndex(questionIndex + 1);
+  }
+
+  function prevQuestion() {
+    if (questionIndex > 0) setQuestionIndex(questionIndex - 1);
+  }
 
   return (
     <article className={styles["questions_container"]}>
       <div className={styles["progressBar"]}>
-        <h4>You have answered 3 from 5 questions</h4>
+        <h4>You have answered {questionIndex + 1} from 5 questions</h4>
       </div>
 
-      <h3> {questions.q1.question}</h3>
+      <h3> {currentQuestion.question}</h3>
 
       <div className={styles["answers_container"]}>
         <ul>
           <li>
-            <strong>A:</strong> {questions.q1.a1}
+            <strong>A:</strong> {currentQuestion.a1}
           </li>
           <li>
-            <strong>B:</strong> {questions.q1.a2}
+            <strong>B:</strong> {currentQuestion.a2}
           </li>
         </ul>
 
         <ul>
           <li>
-            <strong>C:</strong> {questions.q1.a3}
+            <strong>C:</strong> {currentQuestion.a3}
           </li>
           <li>
-            <strong>D:</strong> {questions.q1.a4}
+            <strong>D:</strong> {currentQuestion.a4}
           </li>
         </ul>
+      </div>
+
+      <div className={styles["questions_buttons"]}>
+        <button onClick={prevQuestion}>Previous question</button>
+        <button onClick={nextQuestion}>Next question</button>
       </div>
     </article>
   );
