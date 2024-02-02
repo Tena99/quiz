@@ -2,7 +2,7 @@ import styles from "./Questions.module.css";
 import { useState } from "react";
 import questions from "../data/questions.json";
 
-export default function Questions() {
+export default function Questions({ setNumCorrectAnswers }) {
   const [questionIndex, setQuestionIndex] = useState(0);
   const currentQuestion = questions[questionIndex];
 
@@ -12,7 +12,7 @@ export default function Questions() {
 
     li.map((item) => {
       item.classList.remove(styles["wrong_answer"]);
-      item.classList.remove(styles["right_answer"]);
+      item.classList.remove(styles["correct_answer"]);
     });
 
     if (questions.length - 1 > questionIndex);
@@ -25,16 +25,10 @@ export default function Questions() {
   }
 
   function chooseAnwer(answerNum, element) {
-    console.log(answerNum);
-    console.log(element);
-
-    element.a;
-
-    if (questions[questionIndex].rightAnswer == answerNum) {
-      console.log("Right answer");
-      element.classList.add(styles["right_answer"]);
+    if (questions[questionIndex].correctAnswer == answerNum) {
+      element.classList.add(styles["correct_answer"]);
+      setNumCorrectAnswers((prevNum) => prevNum + 1);
     } else {
-      console.log("Wrong answer");
       element.classList.add(styles["wrong_answer"]);
     }
   }
