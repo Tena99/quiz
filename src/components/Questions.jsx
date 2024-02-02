@@ -62,8 +62,18 @@ export default function Questions({ setNumCorrectAnswers }) {
       </div>
 
       <div className={styles["questions_buttons"]}>
-        <button onClick={prevQuestion}>Previous question</button>
-        <button onClick={nextQuestion}>Next question</button>
+        <button
+          onClick={prevQuestion}
+          disabled={currentQuestion === questions[0]}
+        >
+          Previous question
+        </button>
+        <button
+          onClick={nextQuestion}
+          disabled={currentQuestion === questions[4]}
+        >
+          Next question
+        </button>
       </div>
     </article>
   );
