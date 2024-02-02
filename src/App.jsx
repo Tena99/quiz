@@ -16,13 +16,8 @@ function App() {
     <>
       <div className="app">
         <h1>Quiz app</h1>
-<<<<<<< HEAD
         <WelcomePage />
         <Questions />
-=======
-        {/* <WelcomePage /> */}
-        {/* <Questions /> */}
->>>>>>> main
         <Ads />
         <Results />
       </div>
