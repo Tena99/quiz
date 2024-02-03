@@ -35,7 +35,14 @@
   text-transform: uppercase;
   text-align: center;
 }
+button,
+.prevbutton,
+.nextbutton {
+  background-color: var(--secondary-color);
+}
+
 .adbutton {
+  text-decoration: none;
   width: 200px;
   grid-area: 4 / 2 / 5 / 3;
   background-color: var(--secondary-color);
