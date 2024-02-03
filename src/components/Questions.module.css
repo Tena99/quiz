@@ -27,21 +27,20 @@
     padding: 0;
     border-radius: 15px;
     overflow: hidden;
+    transition: all 0.2s;
   }
   progress[value]::-webkit-progress-bar {
     box-shadow: #000000 inset 0px 0px 20px;
     background: var(--secondary-color);
+    transition: all 0.2s;
   }
   progress[value]::-webkit-progress-value {
     background: var(--primary-color);
+    transition: all 0.2s;
   }
   .progressBar {
     width: 100%;
     background-color: var(--secondary-color);
-    text-shadow: black 1px 1px 1px;
-    box-shadow: black inset 0px 0px 5px;
-    border-radius: 15px;
-    padding: 5px 15px 5px 15px;
     margin: auto;
     height: 50px;
     color: var(--primary-color);
