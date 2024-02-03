@@ -40,7 +40,7 @@ export default function Questions({
   return (
     <article className={styles["questions_container"]}>
       <progress
-        value={`${questionIndex * 0.2}`}
+        value={`${questionIndex * 0.25}`}
         className={styles["progressBar"]}
       >
         <h4>You have answered {questionIndex + 1} from 5 questions</h4>

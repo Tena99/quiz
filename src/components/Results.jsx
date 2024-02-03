@@ -4,9 +4,9 @@ export default function Results({ goToPreviousPage, numCorrectAnswers }) {
   return (
     <div className={styles.results}>
       <div className="switcher">
-        <button className="prevbutton" onClick={goToPreviousPage}>
+        <a className={styles.prevbutton} onClick={goToPreviousPage}>
           <i className="fa-solid fa-angle-left"></i>
-        </button>
+        </a>
       </div>
 
       <p className={styles.text}>Number of correct answers: </p>
