@@ -28,10 +28,15 @@
   }
   .count {
     font-size: 10.5em;
+    background: var(--primary-color);
     border: 20px solid var(--primary-color);
     width: 300px;
     height: 300px;
     border-radius: 30px;
+    color: transparent;
+    font-weight: 800;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    text-shadow: 0 0 80px #fff, 0 0 10px #f0f, 0 0 1px #fff;
   }
 }
 @keyframes animate {
@@ -40,5 +45,30 @@
   }
   to {
     filter: hue-rotate(360deg);
+  }
+}
+.prevbutton {
+  background-color: transparent;
+  border: none;
+  font-size: 3.5em;
+  background-color: transparent;
+  border: 0px solid var(--dark-border-color);
+  color: var(--primary-color);
+  text-shadow: black 1px 1px 1px;
+  font-size: 4em;
+  transition: all 0.2s;
+
+  &:hover {
+    color: var(--secondary-color);
+    text-shadow: #000 0 0 2px, var(--primary-color) 0 0 3px,
+      var(--secondary-color) 0 0 30px, var(--secondary-color) 0 0 20px,
+      var(--secondary-color) 0 0 10px;
+    scale: 1.1;
+  }
+
+  &:active {
+    color: var(--primary-color);
+    text-shadow: var(--secondary-color) 0 0 4px;
+    scale: 0.9;
   }
 }

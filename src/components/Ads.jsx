@@ -8,10 +8,10 @@ function Ads({ goToPreviousPage, goToNextPage }) {
         className="switcher"
         style={{ paddingLeft: "40px", paddingRight: "40px" }}
       >
-        <button className="prevbutton" onClick={goToPreviousPage}>
+        <button className={styles.prevbutton} onClick={goToPreviousPage}>
           <i className="fa-solid fa-angle-left"></i>
         </button>
-        <button className="nextbutton" onClick={goToNextPage}>
+        <button className={styles.nextbutton} onClick={goToNextPage}>
           <i className="fa-solid fa-chevron-right"></i>
         </button>
       </div>
