@@ -5,6 +5,7 @@
 }
 
 .questions_container {
+  color: var(--primary-color);
   display: flex;
   flex-direction: column;
   border: 1px solid var(--light-border-color);
@@ -22,14 +23,28 @@
     border-radius: 15px;
     padding: 15px;
   }
-
-  .progressBar {
-    background-color: var(--secondary-color);
-    text-shadow: black 1px 1px 1px;
+  progress[value] {
+    padding: 0;
     border-radius: 15px;
-    padding: 5px 15px 5px 15px;
-    color: var(--third-color);
+    overflow: hidden;
+    transition: all 0.2s;
+  }
+  progress[value]::-webkit-progress-bar {
+    box-shadow: #000000 inset 0px 0px 20px;
+    background: var(--secondary-color);
+    transition: all 0.2s;
+  }
+  progress[value]::-webkit-progress-value {
+    background: var(--primary-color);
+    transition: all 0.2s;
+  }
+  .progressBar {
+    width: 100%;
+    background-color: var(--secondary-color);
     margin: auto;
+    height: 50px;
+    color: var(--primary-color);
+    transition: all 0.2s;
 
     h4 {
       margin: 0;
@@ -43,9 +58,13 @@
 
   .answers_container {
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
 
     ul {
-      justify-self: center;
       list-style: none;
       width: 50%;
       padding: 10px;
@@ -63,11 +82,12 @@
         color: var(--third-color);
         border-radius: 7px;
         max-width: 400px;
-        height: 50px;
+        min-height: 50px;
         padding: 10px 20px 0 0;
         margin-bottom: 15px;
         border: 1px solid var(--dark-border-color);
         font-weight: 300;
+        box-shadow: 0 1px 2px #000;
         transition: all 0.2s;
 
         strong {
@@ -99,6 +119,7 @@
       border: 1px solid var(--dark-border-color);
       color: var(--third-color);
       text-shadow: black 1px 1px 1px;
+      box-shadow: 0 2px 5px #000;
       font-size: 2em;
       transition: all 0.2s;
 

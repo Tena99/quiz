@@ -37,11 +37,11 @@
   },
   {
     "id": 5,
-    "question": "Wie heißt Ralf mit zweitem Vornamen?",
-    "a1": "Thomas",
-    "a2": "Ulrich",
-    "a3": "Sabine",
-    "a4": "Jürgen",
-    "correctAnswer": "a4"
+    "question": "Wie lang ist die Distanz bei einem Marathonlauf?",
+    "a1": "32km 95m",
+    "a2": "42km 195m",
+    "a3": "23km 159m",
+    "a4": "14km 529m",
+    "correctAnswer": "a2"
   }
 ]

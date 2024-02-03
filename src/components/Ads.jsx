@@ -28,7 +28,14 @@ function Ads({ goToPreviousPage, goToNextPage }) {
         </p>
         <img className={styles.promoimg} src={PromoImg} alt="PromoImg" />
 
-        <button className={styles.adbutton}>Mehr erfahren!</button>
+        <a
+          href="https://www.taktsoft.com/campus/talents"
+          target="_blank"
+          rel="noreferrer"
+          className={styles.adbutton}
+        >
+          Mehr erfahren!
+        </a>
       </div>
     </div>
   );
