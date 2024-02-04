@@ -36,3 +36,21 @@ h1 {
   transition: all 0.2s;
   text-align: center;
 }
+@media screen and (min-width: 1200px) {
+}
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .app {
+    margin: 0px;
+  }
+}
+@media screen and (max-width: 575px) {
+  .app {
+    margin: 0px;
+    padding: 20px 0 0 0;
+  }
+}

@@ -5,9 +5,8 @@
 }
 
 .page {
-  margin-top: 20px;
+  margin: 0;
   width: 100%;
-  padding: 0;
   border: 1px solid var(--dark-border-color);
   border-radius: 20px;
   background-color: var(--primary-color);
@@ -101,4 +100,23 @@
   background-color: transparent;
   border: none;
   box-shadow: none;
+}
+
+@media screen and (min-width: 1200px) {
+}
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .page {
+    margin: 0px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .page {
+    margin: 0px;
+  }
 }

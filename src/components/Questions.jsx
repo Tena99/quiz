@@ -49,20 +49,29 @@ export default function Questions({
       <h3> {currentQuestion.question}</h3>
 
       <div className={styles["answers_container"]}>
-        <ul>
-          <li onClick={(event) => chooseAnwer("a1", event.target)}>
+        <ul className={styles.qlist}>
+          <li
+            className={styles.a}
+            onClick={(event) => chooseAnwer("a1", event.target)}
+          >
             <strong>A:</strong> {currentQuestion.a1}
           </li>
-          <li onClick={(event) => chooseAnwer("a2", event.target)}>
+          <li
+            className={styles.b}
+            onClick={(event) => chooseAnwer("a2", event.target)}
+          >
             <strong>B:</strong> {currentQuestion.a2}
           </li>
-        </ul>
-
-        <ul>
-          <li onClick={(event) => chooseAnwer("a3", event.target)}>
+          <li
+            className={styles.c}
+            onClick={(event) => chooseAnwer("a3", event.target)}
+          >
             <strong>C:</strong> {currentQuestion.a3}
           </li>
-          <li onClick={(event) => chooseAnwer("a4", event.target)}>
+          <li
+            className={styles.d}
+            onClick={(event) => chooseAnwer("a4", event.target)}
+          >
             <strong>D:</strong> {currentQuestion.a4}
           </li>
         </ul>

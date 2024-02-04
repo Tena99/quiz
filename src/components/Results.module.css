@@ -72,3 +72,38 @@
     scale: 0.9;
   }
 }
+@media screen and (min-width: 1200px) {
+  .prevbutton {
+    margin: 50px 0 0 0;
+  }
+}
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .prevbutton {
+    margin: 50px 0 0 0;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .prevbutton {
+    margin: 40px 0 0 0;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .prevbutton {
+    margin: 40px 0 0 0;
+  }
+}
+@media screen and (max-width: 575px) {
+  .results {
+    margin: 0;
+    gap: 0;
+    padding: 10px 0 10px 0;
+    .text {
+      font-size: 2em;
+      margin: 10px 0 20px 0;
+    }
+    .prevbutton {
+      margin: 20px 0 0 0;
+    }
+  }
+}
