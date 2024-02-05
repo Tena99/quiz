@@ -14,6 +14,8 @@ export default function Questions({
     let container = document.querySelector(`.${styles["questions_container"]}`);
     let li = [...container.querySelectorAll("li")];
 
+    li.map((elem) => (elem.style.pointerEvents = "auto"));
+
     li.map((item) => {
       item.classList.remove(styles["wrong_answer"]);
       item.classList.remove(styles["correct_answer"]);
@@ -28,12 +30,19 @@ export default function Questions({
     if (questionIndex > 0) setQuestionIndex(questionIndex - 1);
   }
 
-  function chooseAnwer(answerNum, element) {
-    if (questions[questionIndex].correctAnswer == answerNum) {
-      element.classList.add(styles["correct_answer"]);
+  function chooseAnswer(answerNum, element) {
+    let container = document.querySelector(`.${styles["questions_container"]}`);
+    let listOfElements = [...container.querySelectorAll("li")];
+
+    listOfElements.map((elem) => (elem.style.pointerEvents = "none"));
+
+    let li = element.closest("li");
+
+    if (questions[questionIndex].correctAnswer === answerNum) {
+      li.classList.add(styles["correct_answer"]);
       setNumCorrectAnswers((prevNum) => prevNum + 1);
     } else {
-      element.classList.add(styles["wrong_answer"]);
+      li.classList.add(styles["wrong_answer"]);
     }
   }
 
@@ -52,25 +61,25 @@ export default function Questions({
         <ul className={styles.qlist}>
           <li
             className={styles.a}
-            onClick={(event) => chooseAnwer("a1", event.target)}
+            onClick={(event) => chooseAnswer("a1", event.target)}
           >
             <strong>A:</strong> {currentQuestion.a1}
           </li>
           <li
             className={styles.b}
-            onClick={(event) => chooseAnwer("a2", event.target)}
+            onClick={(event) => chooseAnswer("a2", event.target)}
           >
             <strong>B:</strong> {currentQuestion.a2}
           </li>
           <li
             className={styles.c}
-            onClick={(event) => chooseAnwer("a3", event.target)}
+            onClick={(event) => chooseAnswer("a3", event.target)}
           >
             <strong>C:</strong> {currentQuestion.a3}
           </li>
           <li
             className={styles.d}
-            onClick={(event) => chooseAnwer("a4", event.target)}
+            onClick={(event) => chooseAnswer("a4", event.target)}
           >
             <strong>D:</strong> {currentQuestion.a4}
           </li>
