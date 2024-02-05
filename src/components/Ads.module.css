@@ -95,11 +95,28 @@
     background-color: var(--third-color);
   }
 }
+
 .prevbutton,
 .nextbutton {
   background-color: transparent;
+  color: var(--third-color);
   border: none;
-  box-shadow: none;
+  transition: all 0.2s;
+  text-shadow: 1px 1px 1px var(--secondary-color);
+  font-size: 3em;
+  &:hover {
+    color: var(--primary-color);
+    text-shadow: #000 0 0 2px, var(--secondary-color) 0 0 3px,
+      var(--third-color) 0 0 30px, var(--third-color) 0 0 20px,
+      var(--third-color) 0 0 10px;
+    scale: 1.1;
+  }
+
+  &:active {
+    color: var(--third-color);
+    text-shadow: var(--secondary-color) 0 0 6px;
+    scale: 0.9;
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -118,5 +135,7 @@
 @media screen and (max-width: 575px) {
   .page {
     margin: 0px;
+    box-shadow: var(--block-shadow-small);
+    border-radius: 14px;
   }
 }

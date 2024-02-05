@@ -13,7 +13,6 @@
   align-items: center;
   align-content: center;
   border: 1px solid var(--light-border-color);
-  border-radius: 20px;
   padding: 40px;
   background-color: var(--third-color);
   transition: all 0.2s;
@@ -25,6 +24,9 @@
   .text {
     font-size: 3em;
     margin: 20px;
+    color: #f0f;
+    text-shadow: var(--dark-border-color) 1px 1px 2px;
+    font-weight: 900;
   }
   .count {
     font-size: 10.5em;
@@ -35,10 +37,20 @@
     border-radius: 30px;
     color: transparent;
     font-weight: 800;
+    animation: counter 0.4s alternate infinite;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     text-shadow: 0 0 80px #fff, 0 0 10px #f0f, 0 0 1px #fff;
   }
 }
+@keyframes counter {
+  from {
+    scale: 0.9;
+  }
+  to {
+    scale: 1.1;
+  }
+}
+
 @keyframes animate {
   from {
     filter: hue-rotate(0deg);
@@ -55,7 +67,9 @@
   border: 0px solid var(--dark-border-color);
   color: var(--primary-color);
   text-shadow: black 1px 1px 1px;
-  font-size: 4em;
+  font-size: 2em;
+  text-transform: uppercase;
+  font-weight: 800;
   transition: all 0.2s;
 
   &:hover {
@@ -63,7 +77,7 @@
     text-shadow: #000 0 0 2px, var(--primary-color) 0 0 3px,
       var(--secondary-color) 0 0 30px, var(--secondary-color) 0 0 20px,
       var(--secondary-color) 0 0 10px;
-    scale: 1.1;
+    scale: 1.4;
   }
 
   &:active {
@@ -76,15 +90,24 @@
   .prevbutton {
     margin: 50px 0 0 0;
   }
+  .count {
+    margin-bottom: 50px;
+  }
 }
 @media screen and (min-width: 992px) and (max-width: 1199px) {
   .prevbutton {
     margin: 50px 0 0 0;
   }
+  .count {
+    margin-bottom: 50px;
+  }
 }
 @media screen and (min-width: 768px) and (max-width: 991px) {
   .prevbutton {
     margin: 40px 0 0 0;
+  }
+  .count {
+    margin-bottom: 50px;
   }
 }
 
@@ -92,18 +115,30 @@
   .prevbutton {
     margin: 40px 0 0 0;
   }
+  .count {
+    margin-bottom: 50px;
+  }
 }
 @media screen and (max-width: 575px) {
   .results {
+    display: flex;
+    flex-direction: column;
     margin: 0;
     gap: 0;
-    padding: 10px 0 10px 0;
+    padding: 10px 10px 10px 10px;
+    box-shadow: var(--block-shadow-small);
+    border-radius: 14px;
     .text {
       font-size: 2em;
       margin: 10px 0 20px 0;
     }
     .prevbutton {
-      margin: 20px 0 0 0;
+      margin: 0 0 0 0;
+    }
+    .count {
+      width: 60%;
+      height: auto;
+      margin-bottom: 20px;
     }
   }
 }
