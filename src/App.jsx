@@ -17,6 +17,11 @@ function App() {
     setCurrentPage((prevPage) => prevPage + 1);
   };
 
+  const resetCounter = () => {
+    setNumCorrectAnswers(0);
+    setCurrentPage(2);
+  };
+
   const showPage = () => {
     switch (currentPage) {
       case 1:
@@ -41,6 +46,7 @@ function App() {
           <Results
             numCorrectAnswers={numCorrectAnswers}
             goToPreviousPage={goToPreviousPage}
+            resetCounter={resetCounter}
           />
         );
       default:

@@ -4,17 +4,6 @@ import PromoImg from "../assets/promoImg.png";
 function Ads({ goToPreviousPage, goToNextPage }) {
   return (
     <div className={styles.page}>
-      <div
-        className="switcher"
-        style={{ paddingLeft: "40px", paddingRight: "40px" }}
-      >
-        <button className={styles.prevbutton} onClick={goToPreviousPage}>
-          <i className="fa-solid fa-angle-left"></i>
-        </button>
-        <button className={styles.nextbutton} onClick={goToNextPage}>
-          <i className="fa-solid fa-chevron-right"></i>
-        </button>
-      </div>
       <div className={styles.ad}>
         <p className={styles.title}>
           Buche das taktsoft bootcamp! <br /> Es ist toll!
@@ -36,6 +25,13 @@ function Ads({ goToPreviousPage, goToNextPage }) {
         >
           Mehr erfahren!
         </a>
+
+        <button className={styles.prevbutton} onClick={goToPreviousPage}>
+          <i className="fa-solid fa-angle-left"></i>
+        </button>
+        <button className={styles.nextbutton} onClick={goToNextPage}>
+          <i className="fa-solid fa-chevron-right"></i>
+        </button>
       </div>
     </div>
   );
