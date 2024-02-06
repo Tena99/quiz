@@ -29,9 +29,11 @@ function App() {
       case 2:
         return (
           <Questions
-            setNumCorrectAnswers={setNumCorrectAnswers}
-            goToPreviousPage={goToPreviousPage}
-            goToNextPage={goToNextPage}
+            onCorrectAnswer={() => {
+              setNumCorrectAnswers((prevValue) => prevValue + 1);
+            }}
+            onGoToPreviousPage={goToPreviousPage}
+            onGoToNextPage={goToNextPage}
           />
         );
       case 3:
