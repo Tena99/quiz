@@ -2,46 +2,41 @@
   {
     "id": 1,
     "question": "Wie selektiert man ein Element mit id=demo?",
-    "a1": "#demo",
-    "a2": ".demo",
-    "a3": "Demo",
-    "a4": "*demo",
-    "correctAnswer": "a1"
+    "answers": ["#demo", ".demo", "Demo", "*demo"],
+    "correctAnswer": "#demo"
   },
   {
     "id": 2,
     "question": "Wofür steht CSS?",
-    "a1": "Computer Style Sheets",
-    "a2": "Cascading Style Sheets",
-    "a3": "Colored Style Sheets",
-    "a4": "Cringe Style Sheets",
-    "correctAnswer": "a2"
+    "answers": [
+      "Computer Style Sheets",
+      "Cascading Style Sheets",
+      "Colored Style Sheets",
+      "Cringe Style Sheets"
+    ],
+    "correctAnswer": "Cascading Style Sheets"
   },
   {
     "id": 3,
     "question": "Welche CSS Syntax ist korrekt?",
-    "a1": "{body: color=black;}",
-    "a2": "{body; color: black;}",
-    "a3": "body {color: black;}",
-    "a4": "body: color=black",
-    "correctAnswer": "a3"
+    "answers": [
+      "{body: color=black;}",
+      "{body; color: black;}",
+      "body {color: black;}",
+      "body: color=black"
+    ],
+    "correctAnswer": "body {color: black;}"
   },
   {
     "id": 4,
     "question": "Was ist der Defaultwert für position?",
-    "a1": "relative",
-    "a2": "fixed",
-    "a3": "absolute",
-    "a4": "static",
-    "correctAnswer": "a4"
+    "answers": ["relative", "fixed", "absolute", "static"],
+    "correctAnswer": "static"
   },
   {
     "id": 5,
     "question": "Wie lang ist die Distanz bei einem Marathonlauf?",
-    "a1": "32km 95m",
-    "a2": "42km 195m",
-    "a3": "23km 159m",
-    "a4": "14km 529m",
-    "correctAnswer": "a2"
+    "answers": ["32km 95m", "42km 195m", "23km 159m", "14km 529m"],
+    "correctAnswer": "42km 195m"
   }
 ]

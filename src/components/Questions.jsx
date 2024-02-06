@@ -1,5 +1,5 @@
-import styles from "./Questions.module.css";
 import { useState } from "react";
+import styles from "./Questions.module.css";
 import questions from "../data/questions.json";
 
 export default function Questions({
@@ -8,7 +8,6 @@ export default function Questions({
   onCorrectAnswer,
 }) {
   const [questionIndex, setQuestionIndex] = useState(0);
-  // represents the answer the user selected. "a1", "a2", "a3", "a4" for valid answers, null means no selection
   const [currentAnswer, setCurrentAnswer] = useState(null);
   const currentQuestion = questions[questionIndex];
 
@@ -51,55 +50,54 @@ export default function Questions({
           <li
             disabled={currentAnswer !== null}
             className={`${styles.a} ${
-              currentAnswer === "a1"
+              currentAnswer === `${currentQuestion.answers[0]}`
                 ? currentAnswer === questions[questionIndex].correctAnswer
                   ? styles["correct_answer"]
                   : styles["wrong_answer"]
                 : undefined
             }`}
-            onClick={() => chooseAnswer("a1")}
+            onClick={() => chooseAnswer(currentQuestion.answers[0])}
           >
-            <strong>A:</strong> {currentQuestion.a1}
-            <p>Test</p>
+            <strong>A: </strong> {currentQuestion.answers[0]}
           </li>
           <li
             disabled={currentAnswer !== null}
             className={`${styles.b} ${
-              currentAnswer === "a2"
+              currentAnswer === `${currentQuestion.answers[1]}`
                 ? currentAnswer === questions[questionIndex].correctAnswer
                   ? styles["correct_answer"]
                   : styles["wrong_answer"]
                 : undefined
             }`}
-            onClick={() => chooseAnswer("a2")}
+            onClick={() => chooseAnswer(currentQuestion.answers[1])}
           >
-            <strong>B:</strong> {currentQuestion.a2}
+            <strong>B: </strong> {currentQuestion.answers[1]}
           </li>
           <li
             disabled={currentAnswer !== null}
             className={`${styles.c} ${
-              currentAnswer === "a3"
+              currentAnswer === `${currentQuestion.answers[2]}`
                 ? currentAnswer === questions[questionIndex].correctAnswer
                   ? styles["correct_answer"]
                   : styles["wrong_answer"]
                 : undefined
             }`}
-            onClick={() => chooseAnswer("a3")}
+            onClick={() => chooseAnswer(currentQuestion.answers[2])}
           >
-            <strong>C:</strong> {currentQuestion.a3}
+            <strong>C: </strong> {currentQuestion.answers[2]}
           </li>
           <li
             disabled={currentAnswer !== null}
             className={`${styles.d} ${
-              currentAnswer === "a4"
+              currentAnswer === `${currentQuestion.answers[3]}`
                 ? currentAnswer === questions[questionIndex].correctAnswer
                   ? styles["correct_answer"]
                   : styles["wrong_answer"]
                 : undefined
             }`}
-            onClick={() => chooseAnswer("a4")}
+            onClick={() => chooseAnswer(currentQuestion.answers[3])}
           >
-            <strong>D:</strong> {currentQuestion.a4}
+            <strong>D: </strong> {currentQuestion.answers[3]}
           </li>
         </ul>
       </div>
@@ -114,7 +112,16 @@ export default function Questions({
         </button>
         <button
           onClick={
-            currentQuestion === questions[4] ? onGoToNextPage : nextQuestion
+            currentQuestion === questions[4]
+              ? () => {
+                  if (
+                    currentAnswer === questions[questionIndex].correctAnswer
+                  ) {
+                    onCorrectAnswer();
+                  }
+                  onGoToNextPage();
+                }
+              : nextQuestion
           }
         >
           <i className="fa-solid fa-chevron-right"></i>
