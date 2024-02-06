@@ -85,3 +85,49 @@ h1 {
     font-size: 0;
   }
 }
+.user {
+  display: flex;
+  margin-right: 0;
+  margin-left: auto;
+  align-content: space-between;
+  justify-content: space-between;
+  justify-items: center;
+  align-items: center;
+  border: 1px solid var(--dark-border-color);
+  border-radius: 10px;
+  padding: 0 10px 0 0;
+  background-color: var(--primary-color);
+  box-shadow: var(--block-shadow-small);
+  .userimage {
+    width: 40px;
+    width: 40px;
+    border-radius: 7px;
+    box-shadow: var(--block-shadow-small);
+    background-color: var(--third-color);
+    aspect-ratio: 1 / 1;
+    padding: 2px;
+  }
+  p {
+    margin: 10px;
+    font-size: 1.5rem;
+    color: var(--third-color);
+    text-shadow: 1px 1px 2px var(--primary-color);
+  }
+}
+
+input {
+  margin: 10px;
+  padding: 5px;
+  border-radius: 7px;
+  border: 1px solid var(--dark-border-color);
+  background-color: var(--third-color);
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: var(--primary-color) 0px 1px 5px;
+}
+label {
+  color: var(--third-color);
+  font-weight: 600;
+  text-shadow: var(--primary-color) 1px 1px 1px;
+}
