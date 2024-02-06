@@ -87,6 +87,7 @@ h1 {
 }
 .user {
   display: flex;
+  flex-direction: row;
   margin-right: 0;
   margin-left: auto;
   align-content: space-between;
@@ -95,7 +96,7 @@ h1 {
   align-items: center;
   border: 1px solid var(--dark-border-color);
   border-radius: 10px;
-  padding: 0 10px 0 0;
+  padding: 10px 15px 10px 10px;
   background-color: var(--primary-color);
   box-shadow: var(--block-shadow-small);
   .userimage {
@@ -130,4 +131,48 @@ label {
   color: var(--third-color);
   font-weight: 600;
   text-shadow: var(--primary-color) 1px 1px 1px;
+}
+
+select {
+  text-shadow: var(--secondary-color) 0.5px 0.5px 1.2px;
+  background-color: var(--third-color);
+  color: var(--primary-color);
+  text-transform: uppercase;
+  border: thin solid var(--dark-border-color);
+  border-radius: 7px;
+  display: inline-block;
+  font: inherit;
+  line-height: 1em;
+  padding: 0.7em 3.5em 0.7em 1em;
+  font-weight: 600;
+  margin: 0 0 0 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* arrows */
+
+select.minimal {
+  background-image: linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%),
+    linear-gradient(to right, #ccc, #ccc);
+  background-position: calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  background-repeat: no-repeat;
+}
+
+select.minimal:focus {
+  background-image: linear-gradient(45deg, green 50%, transparent 50%),
+    linear-gradient(135deg, transparent 50%, green 50%),
+    linear-gradient(to right, #ccc, #ccc);
+  background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em,
+    calc(100% - 2.5em) 0.5em;
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  background-repeat: no-repeat;
+  border-color: green;
+  outline: 0;
 }
