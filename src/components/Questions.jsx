@@ -1,48 +1,36 @@
-import styles from "./Questions.module.css";
 import { useState } from "react";
+import styles from "./Questions.module.css";
 import questions from "../data/questions.json";
 
 export default function Questions({
-  goToPreviousPage,
-  goToNextPage,
-  setNumCorrectAnswers,
+  onGoToPreviousPage,
+  onGoToNextPage,
+  onCorrectAnswer,
 }) {
   const [questionIndex, setQuestionIndex] = useState(0);
+  const [currentAnswer, setCurrentAnswer] = useState(null);
   const currentQuestion = questions[questionIndex];
 
   function nextQuestion() {
-    let container = document.querySelector(`.${styles["questions_container"]}`);
-    let li = [...container.querySelectorAll("li")];
-
-    li.map((elem) => (elem.style.pointerEvents = "auto"));
-
-    li.map((item) => {
-      item.classList.remove(styles["wrong_answer"]);
-      item.classList.remove(styles["correct_answer"]);
-    });
-
-    if (questions.length - 1 > questionIndex);
-
-    setQuestionIndex(questionIndex + 1);
+    if (currentAnswer) {
+      setQuestionIndex(questionIndex + 1);
+      setCurrentAnswer(null);
+      if (currentAnswer === questions[questionIndex].correctAnswer) {
+        onCorrectAnswer();
+      }
+    }
   }
 
   function prevQuestion() {
-    if (questionIndex > 0) setQuestionIndex(questionIndex - 1);
+    if (questionIndex > 0) {
+      setQuestionIndex(questionIndex - 1);
+      setCurrentAnswer(null);
+    }
   }
 
-  function chooseAnswer(answerNum, element) {
-    let container = document.querySelector(`.${styles["questions_container"]}`);
-    let listOfElements = [...container.querySelectorAll("li")];
-
-    listOfElements.map((elem) => (elem.style.pointerEvents = "none"));
-
-    let li = element.closest("li");
-
-    if (questions[questionIndex].correctAnswer === answerNum) {
-      li.classList.add(styles["correct_answer"]);
-      setNumCorrectAnswers((prevNum) => prevNum + 1);
-    } else {
-      li.classList.add(styles["wrong_answer"]);
+  function chooseAnswer(answerId) {
+    if (currentAnswer === null) {
+      setCurrentAnswer(answerId);
     }
   }
 
@@ -60,28 +48,56 @@ export default function Questions({
       <div className={styles["answers_container"]}>
         <ul className={styles.qlist}>
           <li
-            className={styles.a}
-            onClick={(event) => chooseAnswer("a1", event.target)}
+            disabled={currentAnswer !== null}
+            className={`${styles.a} ${
+              currentAnswer === `${currentQuestion.answers[0]}`
+                ? currentAnswer === questions[questionIndex].correctAnswer
+                  ? styles["correct_answer"]
+                  : styles["wrong_answer"]
+                : undefined
+            }`}
+            onClick={() => chooseAnswer(currentQuestion.answers[0])}
           >
-            <strong>A:</strong> {currentQuestion.a1}
+            <strong>A: </strong> {currentQuestion.answers[0]}
           </li>
           <li
-            className={styles.b}
-            onClick={(event) => chooseAnswer("a2", event.target)}
+            disabled={currentAnswer !== null}
+            className={`${styles.b} ${
+              currentAnswer === `${currentQuestion.answers[1]}`
+                ? currentAnswer === questions[questionIndex].correctAnswer
+                  ? styles["correct_answer"]
+                  : styles["wrong_answer"]
+                : undefined
+            }`}
+            onClick={() => chooseAnswer(currentQuestion.answers[1])}
           >
-            <strong>B:</strong> {currentQuestion.a2}
+            <strong>B: </strong> {currentQuestion.answers[1]}
           </li>
           <li
-            className={styles.c}
-            onClick={(event) => chooseAnswer("a3", event.target)}
+            disabled={currentAnswer !== null}
+            className={`${styles.c} ${
+              currentAnswer === `${currentQuestion.answers[2]}`
+                ? currentAnswer === questions[questionIndex].correctAnswer
+                  ? styles["correct_answer"]
+                  : styles["wrong_answer"]
+                : undefined
+            }`}
+            onClick={() => chooseAnswer(currentQuestion.answers[2])}
           >
-            <strong>C:</strong> {currentQuestion.a3}
+            <strong>C: </strong> {currentQuestion.answers[2]}
           </li>
           <li
-            className={styles.d}
-            onClick={(event) => chooseAnswer("a4", event.target)}
+            disabled={currentAnswer !== null}
+            className={`${styles.d} ${
+              currentAnswer === `${currentQuestion.answers[3]}`
+                ? currentAnswer === questions[questionIndex].correctAnswer
+                  ? styles["correct_answer"]
+                  : styles["wrong_answer"]
+                : undefined
+            }`}
+            onClick={() => chooseAnswer(currentQuestion.answers[3])}
           >
-            <strong>D:</strong> {currentQuestion.a4}
+            <strong>D: </strong> {currentQuestion.answers[3]}
           </li>
         </ul>
       </div>
@@ -89,14 +105,23 @@ export default function Questions({
       <div className={styles["questions_buttons"]}>
         <button
           onClick={
-            currentQuestion === questions[0] ? goToPreviousPage : prevQuestion
+            currentQuestion === questions[0] ? onGoToPreviousPage : prevQuestion
           }
         >
           <i className="fa-solid fa-angle-left"></i>
         </button>
         <button
           onClick={
-            currentQuestion === questions[4] ? goToNextPage : nextQuestion
+            currentQuestion === questions[4]
+              ? () => {
+                  if (
+                    currentAnswer === questions[questionIndex].correctAnswer
+                  ) {
+                    onCorrectAnswer();
+                  }
+                  onGoToNextPage();
+                }
+              : nextQuestion
           }
         >
           <i className="fa-solid fa-chevron-right"></i>
