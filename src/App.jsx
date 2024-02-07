@@ -99,7 +99,7 @@ function App() {
         <h1>Quiz app</h1>
         <div className="user">
           {currentPage === 1 ? (
-            <div>
+            <div className="userprops">
               <label> Select an avatar:</label>
               <select
                 className="minimal"

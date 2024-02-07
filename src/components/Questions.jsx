@@ -76,8 +76,7 @@ export default function Questions({
               : nextQuestion
           }
         >
-          Next question
-          <i className="fa-solid fa-chevron-right"></i>
+          <i className="fa-solid fa-forward" />
         </button>
       </div>
     </article>
