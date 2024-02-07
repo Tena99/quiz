@@ -6,10 +6,10 @@ function WelcomePage({ goToNextPage }) {
   return (
     <div>
       <div className={styles.container}>
-        <h2>Welcome to the Quiz App!</h2>
+        <h2>Willkommen zur Quiz-App!</h2>
         <p>
-          Here you can check your knowledges in programming. Just click on the
-          button below to start!
+          Hier können Sie Ihre Programmierkenntnisse überprüfen. Klicken Sie
+          einfach auf die Schaltfläche unten, um zu beginnen!
         </p>
 
         <img
