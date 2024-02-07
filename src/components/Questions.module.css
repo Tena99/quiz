@@ -110,13 +110,9 @@
         transition: all 0.2s;
         max-width: 300px;
         padding: 10px;
-        /* strong {
-        } */
 
-        .selected,
-        &:not([disabled]):active {
-          box-shadow: inset 0 5px 10px #000;
-          scale: 0.97;
+        strong {
+          margin-right: 5px;
         }
       }
     }
@@ -128,18 +124,29 @@
     scale: 1.01;
   }
 
+  .answers_container .qlist li:not([disabled]):active {
+    box-shadow: inset 0 5px 10px #000;
+    scale: 0.97;
+  }
+
   .questions_buttons {
     display: flex;
     justify-content: space-around;
     margin-top: 40px;
+    display: flex;
+    align-items: center;
 
     button {
       background-color: transparent;
       border: none;
       color: var(--primary-color);
       text-shadow: black 1px 1px 1px;
-      font-size: 3em;
+      font-size: 2em;
       transition: all 0.2s;
+
+      i {
+        margin-left: 10px;
+      }
 
       &:hover {
         color: var(--secondary-color);
