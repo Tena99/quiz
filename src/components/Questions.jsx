@@ -5,7 +5,7 @@ import questions from "../data/questions.json";
 const gridStyles = ["a", "b", "c", "d"];
 
 export default function Questions({
-  onGoToPreviousPage,
+  // onGoToPreviousPage,
   onGoToNextPage,
   onCorrectAnswer,
 }) {
