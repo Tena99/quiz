@@ -1,7 +1,7 @@
 import styles from "./Results.module.css";
 
 export default function Results({
-  goToPreviousPage,
+  // goToPreviousPage,
   numCorrectAnswers,
   resetCounter,
 }) {

@@ -13,6 +13,14 @@ function App() {
   const [numCorrectAnswers, setNumCorrectAnswers] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
 
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    if (isOptionSelected && userName.trim() !== "") {
+      goToNextPage();
+    }
+  }
+
   const goToPreviousPage = () => {
     setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
   };
@@ -62,7 +70,7 @@ function App() {
   const showPage = () => {
     switch (currentPage) {
       case 1:
-        return <WelcomePage goToNextPage={goToNextPage} />;
+        return <WelcomePage handleSubmit={goToNextPage} />;
       case 2:
         return (
           <Questions
@@ -113,7 +121,7 @@ function App() {
                   </option>
                 ))}
               </select>
-              <form>
+              <form onSubmit={goToNextPage}>
                 <label htmlFor="name">Ihre Name</label>
                 <input
                   id="name"

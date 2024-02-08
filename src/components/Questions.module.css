@@ -186,7 +186,7 @@
   .questions_container {
     margin: 0;
     box-shadow: var(--block-shadow-small);
-    border-radius: 14px;
+    border-radius: 0 0 14px 14px;
   }
   .qlist {
     display: grid;
